@@ -25,4 +25,13 @@
     return appName;
 }
 
+/**
+ *  优先获取CFBundleShortVersionString，如果获取为nil，则尝试获取kCFBundleVersionKey
+ *
+ *  @return 版本号
+ */
++ (NSString *)version {
+    return [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"] ? :[[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleVersionKey];
+}
+
 @end

@@ -17,4 +17,11 @@
  */
 + (NSString *)appName;
 
+/**
+ *  获取应用版本号
+ *
+ *  @return 版本号
+ */
++ (NSString *)version;
+
 @end
